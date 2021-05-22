@@ -86,3 +86,13 @@ module.exports.getpublisher = function(req,resp){
         resp.status(200).json(game);
     });
 }
+module.exports.getOnepublisher = function(req,resp){
+    const id = req.params.gameId;
+    Game.findById(id).select("publisher").exec(function(err, game){
+        if(err){
+            console.log("error when getting a Publishers");
+            resp.status(500).json(err);
+        }
+        resp.status(200).json(game);
+    });
+}
