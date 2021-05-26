@@ -1,0 +1,16 @@
+<div style="padding: 30px;">
+    <h2 style="padding-bottom: 10px;">
+        Information about the selected Job
+  
+    </h2>
+    
+    <h3>{{vm.job.jobTitle | uppercase}} 
+    </h3>
+    
+    
+    <p> 
+        Salary: {{vm.job.salary | currency}} <br>
+        Company: {{vm.job.company[vm.job.company.indexOf(vm.job.company.id(vm.idd))].companyName}}<br>
+        Description: {{vm.job.description}} <br>
+    </p>
+</div>

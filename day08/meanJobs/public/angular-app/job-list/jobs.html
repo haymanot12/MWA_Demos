@@ -1,0 +1,9 @@
+  
+<h2>{{vm.title}}</h2>
+
+
+<ul>
+    <li ng-repeat="job in vm.jobs">
+        <a ng-href="#!/job/{{job._id}}">{{job.jobTitle}}</a>
+    </li>
+</ul>
