@@ -1,0 +1,20 @@
+{
+  "name": "app07",
+  "version": "1.0.0",
+  "description": "custom diractive",
+  "main": "app07.js",
+  "scripts": {
+    "start": "node app07.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Haymanot",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "mongodb": "^3.6.7",
+    "mongoose": "^5.12.10"
+  }
+}

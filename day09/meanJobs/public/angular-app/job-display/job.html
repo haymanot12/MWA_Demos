@@ -1,0 +1,30 @@
+<div style="padding: 30px;">
+
+    <div ng-show="vm.deleteSuccess" class="alert alert-success" role="alert">
+        Job is successfully deleted
+    </div>
+    
+    <div ng-show="vm.deleteSuccess == false" class="alert alert-danger" role="alert">
+        Error while deleting job
+    </div>
+
+    <h2 style="padding-bottom: 10px;">
+        Information about the selected Job
+  
+    </h2>
+    
+    <h3>{{vm.job.jobTitle | uppercase}} 
+    </h3>
+    
+    
+    <p> 
+        Salary:  {{vm.job.salary | currency}} <br>
+        Company: {{vm.job.company.companyName}}<br>
+        State:   {{vm.job.company.Address.state}}<br/>
+        City:    {{vm.job.company.Address.city}}<br/>
+        Description: {{vm.job.description}} <br>
+
+    </p>
+    <button class="btn  btn-danger"  ng-click="vm.deleteJob(vm.job._id)">Delete</button>
+
+</div>

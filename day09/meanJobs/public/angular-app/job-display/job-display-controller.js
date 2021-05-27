@@ -14,4 +14,17 @@ function JobController($routeParams, JobDataFactory){
             console.log(response)
          
     });
+    vm.deleteSuccess = null;
+    vm.deleteJob = function(jobId){
+        if(jobId){
+            console.log(jobId);
+            JobDataFactory.deleteOneJob(jobId).then(function(response){
+                console.log(response)
+                vm.deleteSuccess = true;
+
+            }).catch(function(error){
+                console.log(error);
+            });
+        }
+    }
 }

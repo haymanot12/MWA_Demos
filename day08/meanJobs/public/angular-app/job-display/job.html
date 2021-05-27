@@ -10,7 +10,7 @@
     
     <p> 
         Salary: {{vm.job.salary | currency}} <br>
-        Company: {{vm.job.company[vm.job.company.indexOf(vm.job.company.id(vm.idd))].companyName}}<br>
+        Company: {{vm.job.company[vm.job.company.indexOf(vm.job.company[0]._id(vm.idd))].companyName}}<br>
         Description: {{vm.job.description}} <br>
     </p>
 </div>
