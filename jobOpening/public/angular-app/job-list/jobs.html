@@ -1,0 +1,38 @@
+  
+<h3>{{vm.title}}</h3>
+
+<ul>
+    <li ng-repeat="job in vm.jobs">
+        <a ng-href="#!/jobs/{{job._id}}">{{job.title}}</a>
+    </li>
+</ul>
+
+<div ng-show="vm.success" class="alert alert-success" role="alert">
+    Jobs is successfully Added
+</div>
+
+<div ng-show="vm.success == false" class="alert alert-danger" role="alert">
+    Error while Adding Job
+</div>
+
+<form name="vm.jobForm" ng-submit="vm.addJob()">
+
+    To add a new Job please fill in all the fields below: <br>
+
+
+	Title: <input type="text" name="title" required ng-model="vm.newJobTitle"style="color:black"/><BR/>
+	Salary: <input type="number" name="salary" required ng-model="vm.newJobSalary" style="color:black"/><BR/>
+    Experience: <input type="text" name = "experience" required ng-model="vm.newJobSExperience" style="color:black"/><BR/>
+	Skill: <input type="text" name="skills" required ng-model="vm.newJobSkill" style="color:black"/><BR/>
+	Description: <input type="text" name="description" required ng-model="vm.newJobDescription" style="color:black"/><BR/>
+	postDate: <input type="text" name="postDate" required ng-model="vm.newJobpostDate" style="color:black"/><BR/>
+    <span style="font-weight: bold;"> Location</span>
+    <div style="padding-left: 10px;">
+    State: <input type="text" name="state" required ng-model="vm.newJobLocationx" style="color:black"/><BR/>
+    City: <input type="text" name="city" required ng-model="vm.newJobLocationy" style="color:black"/><BR/>
+    </div>
+
+
+	<button type="submit" class="btn-success">Add Job</button><BR/>
+
+</form>
