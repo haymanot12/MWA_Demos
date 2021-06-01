@@ -1,0 +1,69 @@
+<h2>{{vm.title}}</h2>
+<form class="form-inline" style="margin: 20px;" ng-submit="vm.searchJob()">
+    <div class="form-group">
+        Job Title: <input type="text" class="form-control" placeholder="Search" ng-model="vm.search">
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-left: 5px;">Search</button>
+</form>
+
+<ul>
+    <li ng-repeat="job in vm.jobs">
+        <a ng-href="#!/job/{{job._id}}">{{job.jobTitle}}</a>
+    </li>
+</ul>
+<div ng-if="vm.isLoggedIn()"> 
+    <form name="vm.jobForm" ng-submit="vm.addJob()" style="width: 500px;">
+        <h4>
+
+            To add a new job please fill in all the fields below: <br><br />
+
+        </h4>
+        <div class="form-group">
+            <label for="jobTitle">Title: </label>
+            <input type="text" name="jobTitle" class="form-control" required ng-model="vm.newJobTitle" style="color:black" />
+        </div>
+
+        <div class="form-group">
+            <label for="description"> Description: </label>
+            <input type="text" name="description" class="form-control" required ng-model="vm.newJobDescription"
+                style="color:black" />
+        </div>
+
+        <div class="form-group">
+            <label for="salary"> Salary: </label>
+            <input type="text" name="salary" class="form-control" required ng-model="vm.newJobSalary"
+                style="color:black" />
+        </div>
+
+        <div class="form-group">
+            <label for="companyName"> Company: </label>
+            <input type="text" name="companyName" class="form-control" required ng-model="vm.newJobCompany"
+                style="color:black" />
+        </div>
+        
+        <div class="form-group">
+            <label for="state"> State: </label>
+            <input type="text" name="state" class="form-control" required ng-model="vm.newJobstate"
+                style="color:black" />
+        </div>
+        <div class="form-group">
+            <label for="city"> City: </label>
+            <input type="text" name="city" class="form-control" required ng-model="vm.newJobcity"
+                style="color:black" />
+        </div>
+        
+
+
+
+        <div ng-show="vm.isSaved" class="alert alert-success" role="alert">
+            Job is successfully Added
+        </div>
+
+        <div ng-show="vm.isSaved == false" class="alert alert-danger" role="alert">
+            Error while adding job
+        </div>
+
+        <button type="submit" class="btn-success">Add Job</button><BR />
+
+    </form>
+</div>

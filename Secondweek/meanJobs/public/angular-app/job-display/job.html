@@ -1,0 +1,52 @@
+<div style="padding: 30px;">
+    <div ng-if="vm.isLoggedIn()">
+        <div ng-show="vm.deleteSuccess" class="alert alert-success" role="alert">
+            Job is successfully deleted
+        </div>
+
+        <div ng-show="vm.deleteSuccess == false" class="alert alert-danger" role="alert">
+            Error while deleting job
+        </div>
+
+        <h2 style="padding-bottom: 10px;">
+            Information about the selected Job
+
+        </h2>
+
+        <h3>{{vm.job.jobTitle | uppercase}}
+        </h3>
+
+
+        <p>
+            Salary: {{vm.job.salary | currency}} <br>
+            Company: {{vm.job.company.companyName}}<br>
+            State: {{vm.job.company.Address.state}}<br />
+            City: {{vm.job.company.Address.city}}<br />
+            Description: {{vm.job.description}} <br>
+
+        </p>
+        <button class="btn  btn-danger" ng-click="vm.deleteJob(vm.job._id)">Delete</button>
+        <!-- <button class="btn  btn-success"  ng-click="vm.editJob(vm.job._id)">Edit</button> -->
+        <button class="btn  btn-success" ng-show="vm.show=='edit'" ng-click="vm.editJob()">edit</button>
+
+        <a class="btn  btn-success" ng-href="#!/jobs">Back</a>
+    </div>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////// -->
+    <!-- <div ng-if="vm.isLoggedIn()">  -->
+    <form name="vm.jobForm" ng-show="vm.show=='update'" ng-submit="vm.updateJob()">
+
+        To add a new game please fill in all the fields below: <br>
+
+
+        Job Title: <input type="text" name="jobTitle" required ng-model="vm.newJobTitle" style="color:black" /><BR />
+        Description: <input type="text" name="description" required ng-model="vm.newJobDescription"
+            style="color:black" /><BR />
+        Salary: <input type="text" name="salary" required ng-model="vm.newJobSalary" style="color:black" /><BR />
+
+        <button type="submit" class="btn-success">Update</button><BR />
+
+        </form>
+        </div>
+    </div>
+</div>
