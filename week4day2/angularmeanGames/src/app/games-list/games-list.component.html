@@ -1,0 +1,21 @@
+<ul>
+  <li *ngFor="let game of games">
+    <a routerLink="/games/{{ game._id }}">
+      {{ game.title }} </a
+    >
+  </li>
+</ul>
+
+
+
+<p>Fill the following form to Add A new Game</p><br>
+<form #gameData="ngForm" (ngSubmit)="addGame(gameData.value)">
+    <label>Title: </label>
+    <input type="text" name="title" ngModel /><br><br>
+    <label>Rate: </label>
+    <input type="text" name="rate" ngModel /><br><br>
+    <label>Price: </label>
+    <input type="number" name="price" ngModel /><br><br>
+    <button type="submit"class="btn-success">submit</button>
+  </form>
+

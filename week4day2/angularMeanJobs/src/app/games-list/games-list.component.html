@@ -1,0 +1,20 @@
+<ul>
+  <li *ngFor="let job of jobs">
+    <a routerLink="/jobs/{{ job._id }}">
+      {{ job.jobTitle }} </a>
+  </li>
+</ul>
+
+
+
+      
+<p>Fill the following form to Add A new Job</p><br>
+<form #gameData="ngForm" (ngSubmit)="addJob(gameData.value)">
+    <label>Job Title: </label>
+    <input type="text" name="jobTitle" ngModel /><br><br>
+    <label>Description: </label>
+    <input type="text" name="description" ngModel /><br><br>
+    <label>Salary: </label>
+    <input type="number" name="salary" ngModel /><br><br>
+    <button type="submit"class="btn-success">submit</button>
+  </form>

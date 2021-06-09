@@ -1,0 +1,24 @@
+<h1>Information about game:</h1>
+<p>{{game.title}}
+</p>
+<p>
+    Id:
+    Price:{{game.price | currency}}
+    Rate:{{game.rate}} <br>
+    <!-- Publishers:{{game.publisher.name}}</br> -->
+</p>
+<button (click)="deleteOneGame()" class="delete">Delete</button>
+
+<p>Fill the following form to Update A new Game</p><br>
+<form #gameData="ngForm" (ngSubmit)="updateGame(gameData.value)">
+    <label>Title: </label>
+    <input type="text" name="title" ngModel /><br><br>
+    <label>Rate: </label>
+    <input type="text" name="rate" ngModel /><br><br>
+    <label>Price: </label>
+    <input type="number" name="price" ngModel /><br><br>
+    <button type="submit"class="btn-success">Update</button>
+  </form>
+<!-- <button class="btn  btn-danger" (ngClick="addGame(gameData.value)">Delete</button> -->
+  
+
